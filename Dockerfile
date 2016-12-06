@@ -6,9 +6,9 @@ WORKDIR /app
 COPY package.json /app
 
 RUN npm install
+COPY . /app
+RUN npm install -g pushstate-server
 RUN npm run build
 
-COPY . /app
-
-EXPOSE 3000
-CMD ["npm", "run", "prod"]
+EXPOSE 9000
+CMD ["pushstate-server", "build"]
