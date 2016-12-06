@@ -9,17 +9,15 @@ cache:
   - node_modules
   - packages/create-react-app/node_modules
   - packages/react-scripts/node_modules
-after_success:
-- docker login -u arashcuzi -p $DOCKER_PASSWORD
-- docker build -t arashcuzi/testdocker .
-- docker push arashcuzi/testdocker
 before_script:
 - npm install -g mocha
 script:
 - npm test
 - npm run build
-after_script:
-- docker run -d -p 9000:9000 arashcuzi/testdocker
 notifications:
   slack:
     secure: GJyI+xMXsVA3pB3B4xYAvhuNE4qYHweNAW110m6a8/euJGTqE00g/vuOCyvEuP2+9KaqDzPx9OLiT+FeIR5v+pVDSFKV9y8VNZP4+yvUR93SGCG6D38lHWq8qSe49QAzxH7wuljmYA2V5K5Yf0/T77TzaklyyMeUaTX1/J7gMXSSqpL8A4QDa4yyo3qeqvlQC6UFaMjdB1hW/EYu5KuWAuMOcZJ4cS6AENjBz4kUln5K8nwFf/GjUNo68srZD6N13lRismgKtXNt9Bw5gmx0RQWZewO/DT1LO4W38F/PuLguR2VMA8Hg27cmQnk5Fnwes7KCjRkkG69ADTGMJngeb7p6ttWioV26J1MkbNhfIfcA0diFlmaHIxPWeyyEzC98v3+wibknzxVktcsVGmobmv2yCzjf3kRFyrrYlBaUZ/SW5Rbo69YoQ3kuYXKUvT09M4uWme0IAqpoZNNLCyMzR1kaM5NjdFQ4HgufuzJTFA4l8FZBHTzrK4lepxF0OKbgMuSjkbj0crga0QmwGFgpx0edmWUgmyex9+/qFnyGIHLErGpL0jUbdgjZJionxW6HMnbG9shRYYOH55WmeThaO//kFYfDtu+z2wII8ZwjlINcAkp+/NVT6zCc48DWDT1cxekGDYcMkUERb3i+Snr/1JshGVuqNePsT6BcF63Lkfg=
+after_success:
+- docker login -u arashcuzi -p $DOCKER_PASSWORD
+- docker build -t arashcuzi/testdocker .
+- docker push arashcuzi/testdocker
