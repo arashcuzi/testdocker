@@ -1,4 +1,4 @@
-import { sum, tax, total } from '../src/utils/utils';
+import { sum, tax, total, fv } from '../src/utils/utils';
 import assert from 'assert';
 
 describe('sum', function() {
@@ -28,5 +28,11 @@ describe('total', function() {
     assert.equal(190, total(125, 52));
     assert.equal(270, total(250, 8));
     assert.equal(9090, total(9000, 1));
+  });
+});
+
+describe('fv', function() {
+  it('should return the future value of a principal amount based on period and rate.', function() {
+    assert.equal(110, fv(100, 1, 10));
   });
 });
