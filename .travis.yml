@@ -9,14 +9,8 @@ cache:
   - node_modules
   - packages/create-react-app/node_modules
   - packages/react-scripts/node_modules
-env:
-  global:
-    DOCKER_USER:
-      secure: QRr+u6YDV/iBUw80pZVAdOQT/uM5sQciAZ6qrIYoD9trrhdzu32WisqkJHA2hkB2/0NTTZ078Mkx0qyzM3/GiapVd+HsDjcJH/u5LiEES98lui+gkQSf5XuXuFAkouZoEgjtFY1GjAbynZjdL6tiOeB0JEqH8HSNbYXRxfkUcvGGqFGjmFf2cTr0A/Z5xpT3J3RSxUqTEZWgIw0hcKD1+kfk92xW1UjxD2UBOPp/TxOV+h64tfdTgv3OhFJBeyWOZyxAdrYsyMUYhtS+R0Qj4aBtWrzeHspug1uEN10p9kIkc6YFfC7hq1LW+KK+6aCNZ1rNMQfFmSHv75Hbki9c/Omk8UW3s+5Qn2s4LN47gSK4btvveQTGJtCnKVyW+UCFKT3dHed7TsRsPcKvoIf5tJTLLtJn2p/2nNGWXD5dAnvyRO/hzpnHDi6Y4AqUibxAKrzT1zeztVvb2MatYhxydWXuOKQUm7Q/w0SBBjFaO9c3lAhcIBP0DsBhd4FDeyk4hGyRU9HxG6t8aMGAJjg7I1I5HMzduiqhfbCxhUDvX9zyNH3xGjRbKuGWDtuVY3BaMznM/d4KLOL2X5mYwLtsP62TGdbfeu+fngls7Brn+LK19jBiXvXz8UYmJjHCl3lyKh6a5cUEwHDDxGCdwivL0SbdZNdtN6nZzYVWhx1FvSM=
-    DOCKER_PASS:
-      secure: DtHUMfebu3icYJIb7IZ983YTjaI+V/+LBKlANwSq337hCl3gqej/RcxxEFexBelRuGcRoIZ3vmUt4G4tS9cQe95HPxdxjCcTohEWjIUbzCI75OtqnbqI2Pf/tcJH6+e6+j4JMooHDoGdn4DyV1HVDLtnMjj6sCdq1aS7mgzwVcYxKHClDYVoujjqC9Vb8AAzT6q9WALZXTAhytlKDVg1j2QFqI+zYGhotXyCtVBkII7L/Xwuwwb9TuuXwahSslLST5xWlEhfQS2v77mguAFrynkR5BUoEOim5HYp5IaroKNawQbChCh+iITYfkvK0OvRujAnklRh48ie7NpRGO2wbNcBzH1rlRnMjig3/qx1B0KLjJ6QNzqc4fvjSgD17HuUkvAbJWHWDM+6XWMsUkDIst8XifQ3qvkU5ph9vG3qx9h7c4oc3QG0y2Be5RUaKBMIfeaeuSSs5lTWYiz1l94hfhJotEwTgTAgyhfYI72E70tevPG88xnXZWCM2yoYX/eOdqYkmwd84NQPfX5rr09ZvsK6cMoAeqwA3epO0mRJw3Gep/fk2nVyLG8ZWNuggZKEczNsDFer3K4Q4ErHnEs4/h+q4WZySxs/WBrV3sYoG53sSJ9YYfCw/vGowQKjLfG3hDkv/NEoyLtLnWdHF6U/NemuQd+UObvBJHRd7LxxwzY=
 after_success:
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker login -u arashcuzi -p CM1r@nd@
   - docker build -t arashcuzi/testdocker .
   - docker push arashcuzi/testdocker
 before_script:
