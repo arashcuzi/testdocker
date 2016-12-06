@@ -15,5 +15,5 @@ script:
   - npm test
   - npm run build
 after_script:
-  - docker build -t arashcuzi/testdocker
+  - docker build -t arashcuzi/testdocker .
   - docker run -d -p 9000:9000 arashcuzi/testdocker
