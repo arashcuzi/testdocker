@@ -10,7 +10,7 @@ cache:
   - packages/create-react-app/node_modules
   - packages/react-scripts/node_modules
 after_success:
-  - docker login -u arashcuzi -p CM1r@nd@
+  - docker login -u arashcuzi -p $DOCKER_PASSWORD
   - docker build -t arashcuzi/testdocker .
   - docker push arashcuzi/testdocker
 before_script:
