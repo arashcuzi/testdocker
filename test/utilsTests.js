@@ -34,6 +34,5 @@ describe('total', function() {
 describe('fv', function() {
   it('should return the future value of a principal amount based on period and rate.', function() {
     assert.equal(110, fv(100, 1, 10));
-    assert.equal(120, fv(100, 1, 10));
   });
 });
